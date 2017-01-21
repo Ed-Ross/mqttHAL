@@ -1,0 +1,1 @@
+*/5 * * * * python /home/ed/xPL-PyHAL-master/sendxplmsg.py xpl-cmnd \* brain address=Master\\\ncommand=cron >/dev/null 2>&1

@@ -1,0 +1,43 @@
+Ce qui marche
+
+$ mosquitto_sub -d -t ed/test
+
+PUIS
+python :
+import paho.mqtt.publish as publish
+publish.single("ed/test", "Coucou")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How does it work ?
+
+You call
+python xPL-PyHal.py start 
+(or stop, console, restart)
+
+*********** xPL-PyHal.py ***********
+Creates a xPLattach (from BrainPyHal) object
+Creates a xPLmessage (from xPLmessage) object
+Creates a demon (from Daemon) and starts the listener in the XPLattach object
+	*********** BrainPyHAL ***********
+	Reads the local cortex file, or the distant cortex file (in Google Drive), with all instructions [n'a rien à faire dans le Brain !!] - (based on function in cortexManager)
+	Creates inbibitors and enablers
+	Starts Listening
+	Reads instructions from incoming message
+	Launches actions based on instructions (class actionsThreading)
+		*********** actionsThreading ***********
+		Starts a thread for each action to be performed
+	
+
+/!\ downloadCortex deprecated ? Or just for manual operation ?
